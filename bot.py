@@ -18,6 +18,8 @@ async def on_member_join(member):
     await client.send_message(member, "welcome to the server! we hope you will enjoy your stay :heart:")
     print("send message to " + member.name)
     
+@client.event    
+    
 async def on_message(message):
     if message.content.startswith('!test'):
         counter = 0
