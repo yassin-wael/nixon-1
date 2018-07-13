@@ -32,6 +32,15 @@ async def on_message(message):
     elif message.content.startswith('!sleep'):
         await asyncio.sleep(5)
         await client.send_message(message.channel, 'Done sleeping')
+        
+    if message.content.startswith('!join'):
+        try:
+            channel = message.author.voice.voice_channel
+            await client.join_voice_channel(channel)
+        except discord.errors.InvalidArgument:
+            await client.send_message(message.channel, "Kein Voice channel gefunden.")
+        except Exception as error:
+            await client.send_message(message.channel, "Ein Error: ```{error}```".format(error=error))        
 
 client.run("NDY1MjgyMjk3NDc0NzExNTc0.DiLP7A.dpq8qvPczWGvchEZn_xrdAdOc1A")
 
