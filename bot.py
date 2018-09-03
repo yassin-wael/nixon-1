@@ -42,5 +42,20 @@ async def on_message(message):
         except Exception as error:
             await client.send_message(message.channel, "Ein Error: ```{error}```".format(error=error))        
 
+    if message.content.lower().startswith("!info"):
+        info = discord.Embed(
+            title="Hey, I'M Yassin w. :)",
+            color=0xe74c3c,
+            description="Hey this bot made for being online 27/7\n"
+                        "the program : python 3.6.5 \n"
+                        "dev : yassin w.#5343"
+                        "\n"
+                        "\n"
+                        "Beta 0.1"
+
+        )
+
+        await client.send_message(message.channel, embed=info)             
+            
 client.run("NDY1MjgyMjk3NDc0NzExNTc0.DiLP7A.dpq8qvPczWGvchEZn_xrdAdOc1A")
 
