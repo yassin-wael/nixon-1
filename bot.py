@@ -1,20 +1,9 @@
 import discord
-from discord.ext import commands
-from discord.ext.commands import Bot
 import asyncio
-import random
-import requests
-import os
 
-type = 1
+
+
 client = discord.Client()
-
-players = {}
-
-hendrikid = "465282297474711574"
-
-minutes = 0
-hour = 0
 
 
 @client.event
@@ -25,6 +14,10 @@ async def on_ready():
     print('------')
     await client.change_presence(game=discord.Game(name="25/7"))
 
+@client.event
+async def on_message(message):
+    if message.content.startswith("!test"):
+        await client.send_message(message.channel, "Test erfolgreich")    
 
 @client.event
 async def on_member_join(member):
@@ -70,9 +63,6 @@ async def on_message(message):
         )
 
         await client.send_message(message.channel, embed=info)     
-
-if message.content.startswith('!uptime'):
-        await client.send_message(message.channel, "**Ich bin schon {0} Stunde/n und {1} Minuten online auf {2}. **".format(hour, minutes, message.server))
         
 
 client.run("NDY1MjgyMjk3NDc0NzExNTc0.DiLP7A.dpq8qvPczWGvchEZn_xrdAdOc1A")
