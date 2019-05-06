@@ -11,7 +11,7 @@ client = discord.Client()
 
 players = {}
 
-hendrikid = "227403635166806016"
+hendrikid = "465282297474711574"
 
 minutes = 0
 hour = 0
