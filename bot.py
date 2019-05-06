@@ -12,11 +12,11 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    await client.change_presence(game=discord.Game(name="25/7"))
+    await client.change_presence(game=discord.Game(name="24/7"))
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("!test"):
+    if message.content.startswith("!best"):
         await client.send_message(message.channel, "Test erfolgreich")    
 
 @client.event
