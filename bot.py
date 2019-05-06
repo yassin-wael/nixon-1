@@ -55,7 +55,11 @@ async def on_message(message):
 
         )
 
-        await client.send_message(message.channel, embed=info)             
-            
+        await client.send_message(message.channel, embed=info)     
+
+if message.content.startswith('!uptime'):
+        await client.send_message(message.channel, "**Ich bin schon {0} Stunde/n und {1} Minuten online auf {2}. **".format(hour, minutes, message.server))
+        
+
 client.run("NDY1MjgyMjk3NDc0NzExNTc0.DiLP7A.dpq8qvPczWGvchEZn_xrdAdOc1A")
 
