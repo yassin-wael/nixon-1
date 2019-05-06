@@ -1,7 +1,21 @@
 import discord
+from discord.ext import commands
+from discord.ext.commands import Bot
 import asyncio
+import random
+import requests
+import os
 
+type = 1
 client = discord.Client()
+
+players = {}
+
+hendrikid = "227403635166806016"
+
+minutes = 0
+hour = 0
+
 
 @client.event
 async def on_ready():
